@@ -1,10 +1,10 @@
 import pandas as pd
 global df,df1,df2,df3
 df = pd.read_csv("real ipl datset\points_table.csv")
-df1 =pd.read_excel("real ipl datset\\homes_add.xlsx")
+df1 =pd.read_excel("real ipl datset\homes_add.xlsx")
 df.rename(columns={'name': 'Team_Name', 'matcheswon': 'Matches_Won'}, inplace=True)
-df2 =pd.read_excel("real ipl datset\\Copy of Book1.xlsx")
-df3 =pd.read_csv("real ipl datset\\matches.csv")
+df2 =pd.read_excel("real ipl datset\Copy of Book1.xlsx")
+df3 =pd.read_csv("real ipl datset\matches.csv")
 
 def preprocess():
     var = df.groupby(['Team_Name']).sum()[['matcheslost']]

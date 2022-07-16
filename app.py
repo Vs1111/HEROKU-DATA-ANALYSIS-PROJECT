@@ -37,7 +37,7 @@ if user_menu == 'BATTING-WISE ANALYSIS':
     boling_file = boling_file.set_index(['Rank'])
     st.dataframe(boling_file)
     import plotly.figure_factory as ff
-    df = pd.read_csv("real ipl datset\\Players18.csv")
+    df = pd.read_csv("real ipl datset\Players18.csv")
     df = pd.DataFrame(df)
     st.dataframe(df)
     df = df.iloc[:, 1:]
@@ -56,7 +56,7 @@ if user_menu == 'BATTING-WISE ANALYSIS':
     st.plotly_chart(fig)
 if user_menu == 'OVERALL ANALYSIS':
     st.title("Teams over the years")
-    df1 = pd.read_csv("real ipl datset\\matches.csv")
+    df1 = pd.read_csv("real ipl datset\matches.csv")
     df2 = df1.drop(['umpire3'], axis=1)
     df2 = df2.dropna()
     df2 = df2.reset_index(drop=True)
@@ -65,7 +65,7 @@ if user_menu == 'OVERALL ANALYSIS':
     fig = px.line(group_by, x="Year", y="No Of Teams ")
     st.plotly_chart(fig)
     st.title("City over the years")
-    df1 = pd.read_csv("real ipl datset\\matches.csv")
+    df1 = pd.read_csv("real ipl datset\matches.csv")
     df2 = df1.drop(['umpire3'], axis=1)
     df2 = df2.dropna()
     df2 = df2.reset_index(drop=True)
@@ -86,7 +86,7 @@ if user_menu == 'OVERALL ANALYSIS':
     fig.update_traces(textposition='inside', textinfo='percent+label')
     st.plotly_chart(fig)
     st.title("PLAY THE TEAM OVER THE YEAR ")
-    data = pd.read_excel("real ipl datset\\heatmap.xlsx",sheet_name='Sheet3')
+    data = pd.read_excel("real ipl datset\heatmap.xlsx",sheet_name='Sheet3')
     data_set = pd.DataFrame(data.iloc[0:15, 0:15])
     fig, ax = plt.subplots(figsize=(30, 30))
     ax = sn.heatmap(data_set, annot=True)
